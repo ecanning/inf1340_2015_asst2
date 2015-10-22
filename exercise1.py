@@ -21,6 +21,25 @@ def pig_latinify(word):
     :raises:
 
     """
-    result = ""
+#    result = ""
 
-    return result
+
+    pig_latin = "ay"
+
+    word = str(word)
+
+    if len(word) > 0 and word.isalpha():
+        word = word.lower()
+        first_letter = word[0] # find first vowel
+        piglatin_word = word + first_letter + pig_latin
+        piglatin_word = word[1:len(word)] + first_letter + pig_latin
+        print piglatin_word
+
+    elif ValueError:
+        return ValueError
+
+    return piglatin_word
+
+# pig_latinify(word)
+
+#    return result
