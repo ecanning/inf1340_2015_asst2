@@ -23,21 +23,24 @@ def pig_latinify(word):
     """
 #    result = ""
 
-
-    pig_latin = "ay"
-    vowels = ["a", "e", "i", "o", "u"]
+    words = word.split()
+    test_word = ""
 
     if len(word) > 0 and word.isalpha():
-        first_letter = word[0] # find first vowel
-        piglatin_word = word + first_letter + pig_latin
-        piglatin_word = word[1:len(word)] + first_letter + pig_latin
-        print piglatin_word
+        for test_word in words:
+            if test_word[0] in "aeiou":
+                print test_word + "yay"
+            else:
+                for i in range(len(word)):
+                    sum = 0
+                    while sum == 0:
+                        if word[i] in "aeiou":
+                            print word[i:] + word[:i] + "ay"
+                            sum += 1
+                        else:
+                            sum += 1
 
     elif ValueError:
         return ValueError
 
-    return piglatin_word
-
-# pig_latinify(word)
-
-#    return result
+#pig_latinify()
