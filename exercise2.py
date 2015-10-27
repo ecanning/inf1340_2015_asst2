@@ -9,7 +9,6 @@ This module converts performs substring matching for DNA sequencing
 __author__ = 'Erin_Mib'
 
 
-
 def find(input_string, substring, start, end):
     length_main = len(input_string)
     length_short = len(substring)
@@ -19,18 +18,18 @@ def find(input_string, substring, start, end):
         if input_string[i] == substring[0]:
             index = 0
             for j in range(0, length_short):
-                if input_string[i+j] != substring[j]:
+                if input_string[i + j] != substring[j]:
                     break
                 else:
-                    index = index + 1
+                    index += 1
                     if index == length_short:
                         return i
                         t = 'NIL'
-
             break
     if t != 'NIL':
         return -1
 
+# find()
 
 def multi_find(input_string, substring, start, end):
     length_main = len(input_string)
@@ -43,15 +42,16 @@ def multi_find(input_string, substring, start, end):
         if input_string[i] == substring[0]:
             index = 0
             for j in range(0, length_short):
-                if input_string[i+j] != substring[j]:
+                if input_string[i + j] != substring[j]:
                     break
                 else:
-                    index = index + 1
+                    index += 1
                     if index == length_short:
                         alpha.append(i)
                         result = 'Got'
-
     if result != 'Got':
         return empty
     else:
         return (str(alpha).strip('[]')).replace(" ", "")
+
+# multi_find()
