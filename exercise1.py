@@ -9,7 +9,6 @@ This module converts English words to Pig Latin words
 __author__ = 'Erin_mib'
 
 
-
 def pig_latinify(word):
     """
     Describe your function
@@ -20,25 +19,17 @@ def pig_latinify(word):
 
     """
 #    result = ""
-
-    words = word.split()
-    test_word = ""
-
+    a = 0
     if len(word) > 0 and word.isalpha():
-        for test_word in words:
-            if test_word[0] in "aeiou":
-                print test_word + "yay"
+        for index in word:
+            first_letter = word[a]
+            if first_letter in ('a', 'e', 'i', 'o', 'u'):
+                return word[a:] + "yay"
             else:
-                for i in range(len(word)):
-                    sum = 0
-                    while sum == 0:
-                        if word[i] in "aeiou":
-                            print word[i:] + word[:i] + "ay"
-                            sum += 1
-                        else:
-                            sum += 1
+                a += 1
+                letter = word[a]
+                if letter in ('a', 'e', 'i', 'o', 'u'):
+                    return word[a:] + word[:a] + "ay"
 
     elif ValueError:
         return ValueError
-
-#pig_latinify()
