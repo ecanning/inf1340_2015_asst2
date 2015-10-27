@@ -6,34 +6,52 @@ This module converts performs substring matching for DNA sequencing
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
-__license__ = "MIT License"
+__author__ = 'Erin_Mib'
+
 
 
 def find(input_string, substring, start, end):
-    """
-    Describe your function
+    length_main = len(input_string)
+    length_short = len(substring)
+    t = ''
+    index = 0
+    for i in range(0, length_main):
+        if input_string[i] == substring[0]:
+            index = 0
+            for j in range(0, length_short):
+                if input_string[i+j] != substring[j]:
+                    break
+                else:
+                    index = index + 1
+                    if index == length_short:
+                        return i
+                        t = 'NIL'
 
-    :param :
-    :return:
-    :raises:
-
-    """
-    return -1
+            break
+    if t != 'NIL':
+        return -1
 
 
 def multi_find(input_string, substring, start, end):
-    """
-    Describe your function
+    length_main = len(input_string)
+    length_short = len(substring)
+    result = ''
+    empty = ''
+    index = 0
+    alpha = []
+    for i in range(0, length_main):
+        if input_string[i] == substring[0]:
+            index = 0
+            for j in range(0, length_short):
+                if input_string[i+j] != substring[j]:
+                    break
+                else:
+                    index = index + 1
+                    if index == length_short:
+                        alpha.append(i)
+                        result = 'Got'
 
-    :param :
-    :return:
-    :raises:
-
-    """
-    result = ""
-
-    return result
-
+    if result != 'Got':
+        return empty
+    else:
+        return (str(alpha).strip('[]')).replace(" ", "")
