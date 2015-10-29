@@ -60,8 +60,9 @@ def pig_latinify(word):
                 letter = word[a]
                 if letter in vowels:
                     return word[a:] + word[:a] + "ay"
-
     elif ValueError:
         return ValueError
+    elif TypeError:
+        return TypeError
 
 # pig_latinify()

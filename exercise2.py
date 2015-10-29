@@ -12,7 +12,7 @@ __author__ = 'Erin_Mib'
 def find(input_string, substring, start, end):
     length_main = len(input_string)
     length_short = len(substring)
-    t = ''
+    t = ""
     index = 0
     for i in range(0, length_main):
         if input_string[i] == substring[0]:
@@ -24,18 +24,19 @@ def find(input_string, substring, start, end):
                     index += 1
                     if index == length_short:
                         return i
-                        t = 'NIL'
+                        t = "NIL"
             break
-    if t != 'NIL':
+    if t != "NIL":
         return -1
 
 # find()
 
+
 def multi_find(input_string, substring, start, end):
     length_main = len(input_string)
     length_short = len(substring)
-    result = ''
-    empty = ''
+    result = ""
+    empty = ""
     index = 0
     alpha = []
     for i in range(0, length_main):
@@ -48,10 +49,10 @@ def multi_find(input_string, substring, start, end):
                     index += 1
                     if index == length_short:
                         alpha.append(i)
-                        result = 'Got'
-    if result != 'Got':
+                        result = "Got"
+    if result != "Got":
         return empty
     else:
-        return (str(alpha).strip('[]')).replace(" ", "")
+        return (str(alpha).strip("[]")).replace(" ", "")
 
 # multi_find()

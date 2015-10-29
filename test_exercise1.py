@@ -24,4 +24,17 @@ def test_basic():
     assert pig_latinify("is") == "isyay"
     assert pig_latinify("apple") == "appleyay"
 
+    # test with multiple vowels in word
+    assert pig_latinify("wonderful") == "onderfulway"
 
+    # test with non-letters in string
+    try:
+        pig_latinify("2d")
+    except ValueError:
+        assert True
+
+    # test with integer instead of string
+    try:
+        pig_latinify(34)
+    except TypeError:
+        assert True
