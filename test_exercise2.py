@@ -50,4 +50,4 @@ def test_multi_find_basic():
     assert multi_find("abc123$!@ abc123$!@ abc123$!@", "!", 0, 30) == "7,17,27"
 
     # test for a whitespace (single space) search in string
-    # assert find("Testing a string once more", " ", 0, 25) == "7,9,16,21"
+    assert find("Testing a string once more", "", 0, 25) == "7,9,16,21"
