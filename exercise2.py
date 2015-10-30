@@ -10,6 +10,14 @@ __author__ = 'Erin_Mib'
 
 
 def find(input_string, substring, start, end):
+    """
+    This function finds a substring within a string
+
+    :param: string, substring, index start of string search point, index end of string search point
+    :return: lowest index where the substring is entirely contained, as an integer
+    :raises: if substring cannot be found, return -1
+    """
+
     length_main = len(input_string)
     length_short = len(substring)
     t = ""
@@ -29,10 +37,20 @@ def find(input_string, substring, start, end):
     if t != "NIL":
         return -1
 
+
 # find()
 
 
 def multi_find(input_string, substring, start, end):
+    """
+    This function finds a substring each time it occurs within a string
+
+    :param: string, substring, index start of string search point, index end of string search point
+    :return: each index where the substring is entirely contained, as a string separated by commas
+    :raises: if substring cannot be found, return empty
+
+    """
+
     length_main = len(input_string)
     length_short = len(substring)
     result = ""

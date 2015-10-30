@@ -11,8 +11,6 @@ __author__ = 'Erin_mib'
 
 def pig_latinify(word):
     """
-    Describe your function
-
     This function takes an argument of a single word and turns it into Pig Latin
 
     :param: input string in single word
@@ -21,31 +19,6 @@ def pig_latinify(word):
     appended to end of word, followed by "ay"
     :raises: Value Error raised if input is empty, or not a word
 
-
-    Test1:
-    input: string "hello"
-    expected output: string "ellohay"
-    actual output: string "ellohay"
-
-    Test2:
-    input: string "acorn"
-    expected output: string "acornyay"
-    actual output: string "acornyay"
-
-    Test3:
-    input: string "crave"
-    expected output: string "avecray"
-    actual output: string "avecray"
-
-    Test4:
-    input: [nothing - empty string]
-    expected output: ValueError
-    actual output: Value Error
-
-    Test5:
-    input: 56
-    expected output: ValueError
-    actual output: ValueError
     """
 
     a = 0

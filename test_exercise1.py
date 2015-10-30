@@ -38,3 +38,9 @@ def test_basic():
         pig_latinify(34)
     except TypeError:
         assert True
+
+    # test with empty string
+    try:
+        pig_latinify("")
+    except ValueError:
+        assert True
