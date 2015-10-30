@@ -23,7 +23,16 @@ def union(table1, table2):
     :raises: MismatchedAttributesException:
         if tables t1 and t2 don't have the same attributes
     """
-    return []
+
+    numcols_table1 = len(table1[0])
+    numcols_table2 = len(table2[0])
+    if ( numcols_table1 != numcols_table2):
+        return MismatchedAttributesException
+    else:
+        for i in range(0,numcols_table2):
+            if(table1[0][i]!=table2[0][i]):
+                return MismatchedAttributesException
+            else:
 
 
 def intersection(table1, table2):
