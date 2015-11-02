@@ -56,6 +56,7 @@ def test_intersection():
     """
     Test intersection operation.
     """
+
     result = [["Number", "Surname", "Age"],
               [7432, "O'Malley", 39],
               [9824, "Darkes", 38]]

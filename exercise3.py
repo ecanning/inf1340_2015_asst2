@@ -26,29 +26,58 @@ def union(table1, table2):
 
     numcols_table1 = len(table1[0])
     numcols_table2 = len(table2[0])
-    if ( numcols_table1 != numcols_table2):
+    indices1 = range(len(table1))
+    indices2 = range(len(table2))
+    indices = [indices1,indices2]
+    indices = sum(indices,[])
+
+    if numcols_table1 != numcols_table2:
         return MismatchedAttributesException
     else:
-        for i in range(0,numcols_table2):
-            if(table1[0][i]!=table2[0][i]):
-                return MismatchedAttributesException
-            else:
+         #for i in range(0,numcols_table2):
+            #if table1[0][i] != table2[0][i]:
+                #return MismatchedAttributesException
+        new_table = [table1, table2]
+        new_table = sum(new_table,[])
+        xy = zip(indices,new_table)
+        xy.sort()
+        new_table_sorted = [x for y,x in xy]
+        new_table_out = remove_duplicates(new_table_sorted)
+        return new_table_out
 
 
 def intersection(table1, table2):
-    """
-    Describe your function
 
-    """
-    return []
+    numcols_table1 = len(table1[0])
+    numcols_table2 = len(table2[0])
+    if numcols_table1 != numcols_table2:
+        return MismatchedAttributesException
+    else:
+        #for i in range(0,numcols_table2):
+            #if table1[0][i]!=table2[0][i]:
+                #return MismatchedAttributesException
+        new_table = []
+        for row in table1:
+            if row in table2:
+                new_table.append(row)
+        return new_table
 
 
 def difference(table1, table2):
-    """
-    Describe your function
 
-    """
-    return []
+    numcols_table1 = len(table1[0])
+    numcols_table2 = len(table2[0])
+    if numcols_table1 != numcols_table2:
+        return MismatchedAttributesException
+    else:
+        #for i in range(0,numcols_table2):
+            #if table1[0][i]!=table2[0][i]:
+                #return MismatchedAttributesException
+        new_table = [table1[0]]
+        for row in table1:
+            if row not in table2:
+                new_table.append(row)
+        return new_table
 
 
 #####################
@@ -77,3 +106,7 @@ class MismatchedAttributesException(Exception):
     """
     pass
 
+
+# union()
+# intersection()
+# difference()
