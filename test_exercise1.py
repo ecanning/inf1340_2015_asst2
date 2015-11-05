@@ -27,6 +27,9 @@ def test_basic():
     # test with multiple vowels in word
     assert pig_latinify("wonderful") == "onderfulway"
 
+    # test with  vowels in uppercase in word
+    assert pig_latinify("Apple") == "Appleyay"
+
     # test with non-letters in string
     try:
         pig_latinify("2d")

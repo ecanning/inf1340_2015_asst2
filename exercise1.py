@@ -22,7 +22,7 @@ def pig_latinify(word):
     """
 
     a = 0
-    vowels = ("a", "e", "i", "o", "u")
+    vowels = ("a", "e", "i", "o", "u","A","E","I","O","U")
     if len(word) > 0 and word.isalpha():
         for index in word:
             first_letter = word[a]
