@@ -11,18 +11,20 @@ __author__ = 'Erin_mib'
 
 def pig_latinify(word):
     """
-    This function takes an argument of a single word and turns it into Pig Latin
+    This function takes an input of a single word and turns it into Pig Latin
 
     :param: input string in single word
-    :return: output string in single word in "pig latin": if first letter is a vowel,
-    return word with "yay" appended to the end, otherwise consonants before first vowel
+    :return: output string in single word in "pig latin":
+    if first letter is a vowel,
+    return word with "yay" appended to the end,
+    otherwise consonants before first vowel
     appended to end of word, followed by "ay"
     :raises: Value Error raised if input is empty, or not a word
 
     """
 
     a = 0
-    vowels = ("a", "e", "i", "o", "u")
+    vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
     if len(word) > 0 and word.isalpha():
         for index in word:
             first_letter = word[a]
@@ -37,5 +39,4 @@ def pig_latinify(word):
         return ValueError
     elif TypeError:
         return TypeError
-
 # pig_latinify()

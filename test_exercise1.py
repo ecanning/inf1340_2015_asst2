@@ -1,18 +1,12 @@
 #!/usr/bin/env python
-
+from exercise1 import pig_latinify
 """ Assignment 2, Exercise 1, INF1340, Fall, 2015. Pig Latin
 
 Test module for exercise1.py
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
-__license__ = "MIT License"
-
-
-from exercise1 import pig_latinify
+__author__ = 'Erin_Mib'
 
 
 def test_basic():
@@ -26,6 +20,9 @@ def test_basic():
 
     # test with multiple vowels in word
     assert pig_latinify("wonderful") == "onderfulway"
+
+    # test with  vowels in uppercase in word
+    assert pig_latinify("Apple") == "Appleyay"
 
     # test with non-letters in string
     try:
