@@ -28,20 +28,22 @@ def union(table1, table2):
     numcols_table2 = len(table2[0])
     indices1 = range(len(table1))
     indices2 = range(len(table2))
-    indices = [indices1,indices2]
-    indices = sum(indices,[])
+    indices = [indices1, indices2]
+    indices = sum(indices, [])
 
     if numcols_table1 != numcols_table2:
         return MismatchedAttributesException
     else:
-         #for i in range(0,numcols_table2):
-            #if table1[0][i] != table2[0][i]:
-                #return MismatchedAttributesException
+        for i in range(0, numcols_table2):
+            if table1[0][i] != table2[0][i]:
+                return MismatchedAttributesException
+            else:
+                continue
         new_table = [table1, table2]
-        new_table = sum(new_table,[])
-        xy = zip(indices,new_table)
-        xy.sort()
-        new_table_sorted = [x for y,x in xy]
+        new_table = sum(new_table, [])
+        zipped = zip(indices, new_table)
+        zipped.sort()
+        new_table_sorted = [x for y, x in zipped]
         new_table_out = remove_duplicates(new_table_sorted)
         return new_table_out
 
@@ -53,9 +55,11 @@ def intersection(table1, table2):
     if numcols_table1 != numcols_table2:
         return MismatchedAttributesException
     else:
-        #for i in range(0,numcols_table2):
-            #if table1[0][i]!=table2[0][i]:
-                #return MismatchedAttributesException
+        for i in range(0, numcols_table2):
+            if table1[0][i] != table2[0][i]:
+                return MismatchedAttributesException
+            else:
+                continue
         new_table = []
         for row in table1:
             if row in table2:
@@ -70,9 +74,11 @@ def difference(table1, table2):
     if numcols_table1 != numcols_table2:
         return MismatchedAttributesException
     else:
-        #for i in range(0,numcols_table2):
-            #if table1[0][i]!=table2[0][i]:
-                #return MismatchedAttributesException
+        for i in range(0, numcols_table2):
+            if table1[0][i] != table2[0][i]:
+                return MismatchedAttributesException
+            else:
+                continue
         new_table = [table1[0]]
         for row in table1:
             if row not in table2:
