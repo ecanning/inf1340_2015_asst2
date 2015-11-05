@@ -1,17 +1,12 @@
 #!/usr/bin/env python
-
+from exercise2 import find, multi_find
 """ Assignment 2, Exercise 2, INF1340, Fall, 2015. DNA Sequencing
 
 Test module for exercise2.py
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
-__license__ = "MIT License"
-
-from exercise2 import find, multi_find
+__author__ = 'Erin_Mib'
 
 
 def test_find_basic():
@@ -33,7 +28,6 @@ def test_find_basic():
     assert find("abc 123 $!@", "2", 0, 10) == 5
 
 
-
 def test_multi_find_basic():
     """
     Test multi_find function.
@@ -46,7 +40,8 @@ def test_multi_find_basic():
     # test with substring not found
     assert multi_find("Testing a string again", "x", 0, 20) == ""
 
-    # test for punctuation character as string in string with different characters
+    # test for punctuation character as string
+    # in string with different characters
     assert multi_find("abc123$!@ abc123$!@ abc123$!@", "!", 0, 30) == "7,17,27"
 
     # test for a whitespace (single space) search in string
